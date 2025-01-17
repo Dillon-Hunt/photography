@@ -3,9 +3,17 @@
     --page-padding: 60px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #eee;
     margin: 0;
+}
+
+a {
+    text-decoration: underline;
 }
 
 .hero {
@@ -16,6 +24,7 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: #1a1a1d;
+    position: relative;
 }
 
 .hero h1 {
@@ -28,6 +37,20 @@ body {
     color: #8b8b92;
     font-size: 1em;
     margin: 0;
+}
+
+.hero .scroll {
+    left: 50%;
+    font-size: 1.2em;
+    position: absolute;
+    top: calc(100vh - 40px);
+    transform: translate(-50%, -50%);
+    color: #eee;
+    text-decoration: none;
+}
+
+.hero p a {
+    color: #8b8b92;
 }
 
 .gallery {
