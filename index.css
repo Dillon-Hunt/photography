@@ -121,3 +121,21 @@ body {
 .gallery div img:nth-child(3) {
     grid-area: C;
 }
+
+@media screen and (max-width: 600px) {
+    :root {
+        --page-padding: 20px;
+    }
+
+    .gallery div {
+        display: block !important;
+        padding: 0 !important;
+        
+    }
+
+    .gallery div img {
+        width: 100% !important;
+        aspect-ratio: auto !important;
+        margin-bottom: var(--gap-size) !important;
+    }
+}
