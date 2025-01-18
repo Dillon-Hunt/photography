@@ -108,7 +108,7 @@ img {
 
 .gallery div .image:hover::after,
 .gallery div .image:focus::after {
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 .gallery div .image:hover a,
