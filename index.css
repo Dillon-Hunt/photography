@@ -16,6 +16,10 @@ a {
     text-decoration: underline;
 }
 
+img {
+    display: block;
+}
+
 .hero {
     gap: 5px;
     height: 100vh;
@@ -62,22 +66,72 @@ a {
     padding-bottom: var(--gap-size);
 }
 
+.gallery div .image {
+    padding: 0;
+    display: flex;
+    position: relative;
+}
+
+.gallery div .image a {
+    opacity: 0;
+    right: 20px;
+    padding: 10px;
+    bottom: 20px;
+    color: black;
+    font-size: 14px;
+    border-radius: 5px;
+    position: absolute;
+    text-decoration: none;
+    background-color: #eee;
+    transition: opacity ease-in-out 0.1s;
+    font-family: Helvetica, sans-serif;
+    z-index: 3;
+}
+
+.gallery div .image img {
+    position: relative;
+}
+
+.gallery div .image::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    transition: opacity ease-in-out 0.1s;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    
+}
+
+.gallery div .image:hover::after,
+.gallery div .image:focus::after {
+    opacity: 0.2;
+}
+
+.gallery div .image:hover a,
+.gallery div .image:focus a {
+    opacity: 1;
+}
+
 .gallery div:last-child {
     padding-bottom: 0;
 }
 
-.gallery div img {
+.gallery div .image img {
     width: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.gallery .full img {
+.gallery .full .image img {
     width: 100%;
     display: block;
 }
 
-.gallery .banner img {
+.gallery .banner .image img {
     width: 100%;
     display: block;
     aspect-ratio: 2;
@@ -88,7 +142,7 @@ a {
     gap: var(--gap-size);
 }
 
-.gallery .triple img {
+.gallery .triple .image {
     width: calc(33.33333% - calc(var(--gap-size) * 0.6666));
 }
 
@@ -114,6 +168,11 @@ a {
         "C A A";
 }
 
+.gallery .left .image img,
+.gallery .right .image img {
+    height: 100%;
+}
+
 .gallery .vertical {
     display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -128,20 +187,19 @@ a {
     aspect-ratio: 1/2;
 }
 
-.gallery div img {
+.gallery img {
     width: 100%;
-    height: 100%;
 }
 
-.gallery div img:nth-child(1) {
+.gallery div .image:nth-child(1) {
     grid-area: A;
 }
 
-.gallery div img:nth-child(2) {
+.gallery div .image:nth-child(2) {
     grid-area: B;
 }
 
-.gallery div img:nth-child(3) {
+.gallery div .image:nth-child(3) {
     grid-area: C;
 }
 
@@ -156,9 +214,16 @@ a {
         
     }
 
-    .gallery div img {
+    .gallery div .image {
         width: 100% !important;
-        aspect-ratio: auto !important;
         margin-bottom: var(--gap-size) !important;
+    }
+
+    .gallery div .image img {
+        aspect-ratio: auto !important;
+    }
+
+    .gallery div:last-child .image:last-child {
+        margin-bottom: 0 !important;
     }
 }
