@@ -24,6 +24,7 @@ img {
     gap: 5px;
     height: 40vh;
     display: flex;
+    min-height: 320px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
