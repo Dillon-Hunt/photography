@@ -184,11 +184,11 @@ img {
 
 .gallery .right {
     display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: var(--gap-size) var(--gap-size);
-      grid-auto-flow: row;
-      grid-template-areas:
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--gap-size) var(--gap-size);
+    grid-auto-flow: row;
+    grid-template-areas:
         "B A A"
         "C A A";
 }
@@ -200,12 +200,11 @@ img {
 
 .gallery .vertical {
     display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 2fr;
-      gap: 0 var(--gap-size);
-      grid-auto-flow: row;
-      grid-template-areas:
-        "A B C";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    gap: 0 var(--gap-size);
+    grid-auto-flow: row;
+    grid-template-areas: "A B C";
 }
 
 .gallery .vertical img {
